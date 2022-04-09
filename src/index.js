@@ -26,7 +26,7 @@ let arr2 = [8, 6, 7, 9, 4, 3];
 
 function findMe(arr2, startIndex) {
   let minIndexTillNow = arr2[startIndex];
-  for (let i = minIndexTillNow; i < arr2.length; i++) {
+  for (let i = startIndex; i < arr2.length; i++) {
     if (arr2[minIndexTillNow] > arr2[i]) {
       minIndexTillNow = i;
     }
@@ -35,8 +35,10 @@ function findMe(arr2, startIndex) {
 }
 
 for (let i = 0; i < arr2.length; i++) {
-  let minIndex = findMe(arr2, startIndex);
+  let minIndex = findMe(arr2, i);
   let temp2 = arr2[i];
   arr2[i] = arr2[minIndex];
   arr2[minIndex] = temp2;
 }
+
+console.log(arr2);
